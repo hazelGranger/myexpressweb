@@ -19,11 +19,6 @@ app.set('view cache', false);
 swig.setDefaults({ cache: false }); 
 // NOTE: You should always cache templates in a production environment.
 // Don't leave both of these to `false` in production!
-app.use(less({ 
-	src: __dirname + '/public/less',
-	dest: __dirname + '/public/css', 
-	prefix:'/css',
-	compress: true }));
 app.use("/public",express.static(path.join(__dirname, 'public')));
 
 app.get('/*', function (req, res) {
